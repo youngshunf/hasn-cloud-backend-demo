@@ -206,7 +206,7 @@ class Settings(BaseSettings):
     # 与 hasn_platform_operator_grants 表行同构，读入合并进 granted 集；仅应急，常态走 Admin 授予表
     PLATFORM_OPERATOR_AGENTS: str = ''
     HUANXING_SITE_URL: str = (
-        'https://astra.dcfuture.cn'  # 前端站点域名，用于生成分享链接等（2026-07-03 起 huanxing→astra）
+        'https://huanxing.dcfuture.cn'  # Demo 官网域名（2026-11-08 起 astra.dcfuture.cn 让给新系统）
     )
 
     # 2026-08-10：`HUANXING_HERMES_RUNTIME_*` 四项随云端 Runtime 形态退役删除（云端改为部署
@@ -532,8 +532,8 @@ class Settings(BaseSettings):
         'http://localhost:8020',
         'http://192.168.1.92:8020',
         'http://api.ai.dcfuture.cn',
-        # 官网/分享查看器前端域名；website /s/{slug} 读取公开元数据并换票。
-        'https://astra.dcfuture.cn',
+        # Demo 官网/分享查看器前端域名；website /s/{slug} 读取公开元数据并换票。
+        'https://huanxing.dcfuture.cn',
     ]
     CORS_EXPOSE_HEADERS: list[str] = [
         'X-Request-ID',
@@ -796,7 +796,7 @@ class Settings(BaseSettings):
     # [ Agent ] Website Deployment
     ##################################################
     WEBSITE_DEPLOY_DIR: str | None = '/var/www/html/agents_sites'
-    WEBSITE_BASE_URL: str | None = 'https://astra.dcfuture.cn/agents_sites'
+    WEBSITE_BASE_URL: str | None = 'https://huanxing.dcfuture.cn/agents_sites'
 
     ##################################################
     # [ Mobile M1 ] Umeng U-Push (B5)
