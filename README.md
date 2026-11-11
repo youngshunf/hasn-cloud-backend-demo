@@ -1,3 +1,29 @@
+# Astra (唤星) cloud API — demo
+
+**Fork of [fastapi-practices/fastapi-best-architecture](https://github.com/fastapi-practices/fastapi-best-architecture).** The upstream FastAPI admin / architecture skeleton is kept; this `demo` branch adds the Astra (唤星) cloud API on top.
+
+## What I built on top
+
+Product modules added under `backend/app/` (these are not part of upstream FBA):
+
+- **`hasn`** — agents/avatars, nodes and clients, conversations and messages, contacts, skill bundles, artifacts and shares, model registry, app catalog and entitlements, enterprise, audit logs, owner API keys
+- **`hasn_memory`** — memory namespaces and revisions
+- **`hasn_knowledge`** — knowledge bases and document / share APIs
+- **`hasn_task`** — tasks and run summaries
+- **`hasn_publish`**, **`hasn_release`**, **`hasn_hosting`** — publishing, release artifacts, and hosting (publish jobs can materialize bundles asynchronously via Celery)
+- **`hasn_sync`** — device / cloud sync coordination
+- **`billing`** — offerings, plans, subscriptions, credits, payment callbacks (including WeChat Pay signing and fulfillment), usage, NewAPI quota
+- **`marketplace`** — skill / app / template marketplace
+- **`external_mcp`** / **`mcp`** — third-party MCP gateway (registration, keys, quotas)
+- **`newapi`** — integration with an LLM API gateway
+- Additional first-party domains in this fork, including `hasn_deck`, `hasn_design` / `hasn_designsystem`, `hasn_stock` (stock media providers), `hasn_finance` / `hasn_quant`, `hasn_creator`, `hasn_film`, `hasn_im`, and other `hasn_*` packages
+
+Work visible in this fork's history also includes subscription period and credit accounting, skill-bundle delivery (`hermes_yaml`), knowledge-base sharing, design-system write tools, deck tools, and CDN / object-storage publish checks.
+
+This repository is a **demo** snapshot of the cloud API. It does not include the closed-source hasn-node / Rust runtime.
+
+---
+
 <div align="center">
 
 <img alt="The logo includes the abstract combination of the three letters FBA, forming a lightning bolt that seems to spread out from the ground" width="320" src="https://wu-clan.github.io/picx-images-hosting/logo/fba.png">
